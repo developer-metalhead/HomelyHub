@@ -3,7 +3,7 @@ const Card = ({ image, address, price, name }) => {
   return (
     <figure className="property">
       <img src={image} alt="Propertyimg" />
-      <h4>name</h4>
+      <h4>{name}</h4>
       <figcaption>
         <main className="propertydetails">
           <h5>{name}</h5>
