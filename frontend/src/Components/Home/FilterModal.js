@@ -107,7 +107,46 @@ const FilterModal = ({ selectedFilters, onFilterChange, onClose }) => {
           <span>&times;</span>
         </button>
         <div className="modal-filters-container">
-          <div className="filter-section"><label>Price range:</label></div>
+          <div className="filter-section">
+            <label>Price range:</label>
+            <InputRange
+              minValue={600}
+              maxValue={30000}
+              value={priceRange}
+              onChange={handlePriceRangeChange}
+            />
+            <div className="range-inputs">
+              <input
+                type="number"
+                value={priceRange.min}
+                onChange={handleMinInputChange}
+              />
+              <span>-</span>
+              <input
+                type="number"
+                value={priceRange.max}
+                onChange={handleMaxInputChange}
+              />
+            </div>
+          </div>
+
+          <div className="filter-section">
+            <label>Property Type:</label>
+            <div className="icon-box">
+              {propertyTypeOptions.map((options) => (
+                <div
+                  key={options.value}
+                  className={`selectable-box ${
+                    propertyType === options.value ? "selected" : ""
+                  }`}
+                  onClick={() => handlePropertyTypeChange(options.value)}
+                >
+                    <span className="material-icons">{options.icon}</span>
+                    <span>{options.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

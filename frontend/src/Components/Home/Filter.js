@@ -10,7 +10,7 @@ const Filter = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  const handleFilterChange = (filterName,value) => {
+  const handleFilterChange = (filterName, value) => {
     setSelectedFilters((prevFilters) => ({
       ...prevFilters,
       [filterName]: value,
@@ -18,8 +18,16 @@ const Filter = () => {
   };
   return (
     <>
-      <span class="material-symbols-outlined filter" onClick={handleOpenModal}>tune</span>
-      {isModalOpen &&(<FilterModal selectedFilters={selectedFilters} onFilterChange={handleFilterChange} onClose={handleCloseModal} />)}
+      <span class="material-symbols-outlined filter" onClick={handleOpenModal}>
+        tune
+      </span>
+      {isModalOpen && (
+        <FilterModal
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   );
 };
