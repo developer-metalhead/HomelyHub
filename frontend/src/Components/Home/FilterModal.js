@@ -141,11 +141,52 @@ const FilterModal = ({ selectedFilters, onFilterChange, onClose }) => {
                   }`}
                   onClick={() => handlePropertyTypeChange(options.value)}
                 >
-                    <span className="material-icons">{options.icon}</span>
-                    <span>{options.label}</span>
+                  <span className="material-icons">{options.icon}</span>
+                  <span>{options.label}</span>
                 </div>
               ))}
             </div>
+          </div>
+          <div className="filter-section">
+            <label>Room Type:</label>
+            <div className="icon-box">
+              {roomTypeOptions.map((options) => (
+                <div
+                  key={options.value}
+                  className={`selectable-box ${
+                    roomType === options.value ? "selected" : ""
+                  }`}
+                  onClick={() => handleRoomTypeChange(options.value)}
+                >
+                  <span className="material-icons">{options.icon}</span>
+                  <span>{options.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="filter-section">
+            <label>Amenities:</label>
+            <div className="amenities-checkboxes">
+              {amenitiesOptions.map((options) => (
+                <div key={options.value} className="amenity-checkbox">
+                  {console.log(amenities.includes(options.value))}
+                  <input
+                    type="checkbox"
+                    value={options.value}
+                    checked={amenities.includes(options.value)}
+                    onChange={() => handleAmenitiesChange(options.value)}
+                  />
+                  <span className="material-icons amenitieslabel">
+                    {options.icon}
+                  </span>
+                  <span>{options.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="filter-buttons">
+            <button className="clear-button" onClick={handleClearFilters}>Clear</button>
+            <button onClick={HandleFilterChange}>Apply Filters</button>
           </div>
         </div>
       </div>
