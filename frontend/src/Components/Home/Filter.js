@@ -19,7 +19,7 @@ const Filter = () => {
   return (
     <>
       <span class="material-symbols-outlined filter" onClick={handleOpenModal}>tune</span>
-      {isModalOpen &&(<FilterModal selectedFilters={selectedFilters} onFilterChange={handleFilterChange} onclose={handleCloseModal} />)}
+      {isModalOpen &&(<FilterModal selectedFilters={selectedFilters} onFilterChange={handleFilterChange} onClose={handleCloseModal} />)}
     </>
   );
 };
