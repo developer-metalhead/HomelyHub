@@ -185,13 +185,21 @@ const FilterModal = ({ selectedFilters, onFilterChange, onClose }) => {
             </div>
           </div>
           <div className="filter-buttons">
-            <button className="clear-button" onClick={handleClearFilters}>Clear</button>
+            <button className="clear-button" onClick={handleClearFilters}>
+              Clear
+            </button>
             <button onClick={HandleFilterChange}>Apply Filters</button>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+FilterModal.propTypes = {
+  selectedFilters: PropTypes.object.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+  onClose:PropTypes.func.isRequired
 };
 
 export default FilterModal;
